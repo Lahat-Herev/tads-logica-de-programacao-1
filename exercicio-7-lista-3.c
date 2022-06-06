@@ -5,9 +5,9 @@ int main ()
 	int ladoA, ladoB, ladoC; 
 	printf("Digite o lado A: \n");
 	scanf("%d", &ladoA);
-	printf("Digite o lado A: \n");
+	printf("Digite o lado B: \n");
 	scanf("%d", &ladoB);
-	printf("Digite o lado A: \n");
+	printf("Digite o lado C: \n");
 	scanf("%d", &ladoC);
 	if (ladoA == ladoB && ladoB == ladoC)
 		printf("O triangulo e equilatero! \n");
