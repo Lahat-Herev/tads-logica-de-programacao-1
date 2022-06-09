@@ -19,14 +19,15 @@ int main ()
 		case 'A': 
 			desconto = 0.15;
 			valorFinalCompra = valorTotalCompra - (valorTotalCompra * desconto);
-			diferenca = valorFinalCompra - valorTotalCompra;
-			printf("O valor total da compra foi de R$%.2f \n O valor final da compra foi de R$%.2f \n A diferença foi de R$ %.2f reais \n e houve o desconto de 15%. ", valorTotalCompra, valorFinalCompra, diferenca, desconto);
+			diferenca = valorTotalCompra - valorFinalCompra;
+			printf("O valor total da compra foi de R$%.2f \nO valor final da compra foi de R$%.2f \nA diferenca foi de R$%.2f reais e houve o desconto de [15%]. ", valorTotalCompra, valorFinalCompra, diferenca, desconto);
 			break;
 			
 		case 'B': 
 			desconto = 0.10;
 			valorFinalCompra = valorTotalCompra - (valorTotalCompra * desconto);
-			printf("O valor total da compra foi de R$%.2f \n O valor final da compra foi de R$%.2f \n A diferença foi de R$ %.2f reais \n e houve o desconto de 10%. ", valorTotalCompra, valorFinalCompra, diferenca, desconto);
+			diferenca = valorTotalCompra - valorFinalCompra;
+			printf("O valor total da compra foi de R$%.2f \nO valor final da compra foi de R$%.2f \nA diferenca foi de R$%.2f reais e houve o desconto de [10%]. ", valorTotalCompra, valorFinalCompra, diferenca, desconto);
 			break;
 			
 		case 'C': 
@@ -34,7 +35,24 @@ int main ()
 			desconto = 0.05;
 			valorFinalCompra = valorTotalCompra - (valorTotalCompra * desconto);
 			valorParcelas = valorFinalCompra / qtdParcelas;
-			printf("O valor total da compra foi de R$%.2f \n O valor final da compra foi de R$%.2f \n A diferença foi de R$ %.2f reais \n houve o desconto de 5%. \n Teve %d parcelas \n e o valor de cada parcela foi de %.f reais", valorTotalCompra, valorFinalCompra, diferenca, desconto qtdParcelas, valorParcelas);
+			diferenca = valorTotalCompra - valorFinalCompra;
+			printf("O valor total da compra foi de R$%.2f \nO valor final da compra foi de R$%.2f \nA diferença foi de R$%.2f reais e houve o desconto de [5%]. \n Teve %d parcelas \n e o valor de cada parcela foi de R$%.2f", valorTotalCompra, valorFinalCompra, diferenca, qtdParcelas, valorParcelas);
+			break;
+
+		case 'D':
+			qtdParcelas = 6;
+			valorFinalCompra = valorTotalCompra;
+			valorParcelas = valorFinalCompra / qtdParcelas;
+			printf("O valor total da compra foi de R$%.2f \n O valor final da compra foi de R$%.2f \n Teve %d parcelas \n e o valor de cada parcela foi de %f reais", valorTotalCompra, valorFinalCompra, qtdParcelas, valorParcelas);
+			break; 
+
+		case 'E':
+			qtdParcelas = 12; 
+			juros = 0.08;
+			valorFinalCompra = valorTotalCompra + (valorTotalCompra * juros);
+			diferenca = valorFinalCompra - valorTotalCompra;
+			valorParcelas = valorFinalCompra / qtdParcelas;
+			printf("O valor total da compra foi de R$%.2f \n O valor final da compra foi de R$%.2f \n Teve %d parcelas \n O valor de cada parcela foi de R$%.2f \n Teve juros de [8%] e a diferenca foi de R$%.2f", valorTotalCompra, valorFinalCompra, qtdParcelas, valorParcelas, diferenca);
 			break;
 			
 		default: 
