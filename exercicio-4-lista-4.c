@@ -1,71 +1,38 @@
 #include <stdio.h>
 int main ()
 {
-    int mes, ano, bissexto; 
+    int mes, ano; 
     printf("Digite o numero equivalente ao mes do ano: \n");
-    scanf(" %c", &mes);
+    scanf("%d", &mes);
     switch (mes)
     {
-    case 1: 
-        printf("Janeiro tem 31 dias.");
-        break;
-
     case 2: 
-        printf("Digiteo ano: \n");
-        printf("%d", ano);
-        bissexto = ano % 4;
-        switch (bissexto)
-        {
-        case 0: 
-            printf("Ano bissexto. Fevereiro tera 29 dias. ");
-            break;
-        
-        default:
-            printf("Fevereiro tem 28 dias. ");
-            break;
-        }
-
+        printf("Digite o ano: \n");
+        scanf("%d", &ano);
+        if (ano % 4 == 0 && ano % 100 != 0)
+			printf("Ano bissexto. Fevereiro tera 29 dias. ");	
+		else if (ano % 4 == 0 && ano % 100 == 0 && ano % 400 == 0)
+			printf("Ano bissexto. Fevereiro tera 29 dias. u.u");
+		else 
+			printf("Fevereiro tem 28 dias. ");
+		
         break;
-
+	
+	case 1: 
     case 3: 
-        printf("Marco tem 31 dias. ");
-        break;
-
-    case 4: 
-        printf("Abril tem 30 dias. ");
-        break;
-
-    case 5: 
-        printf("");
-        break;
-
-    case 6: 
-        printf("");
-        break;
-
-    case 7: 
-        printf("");
-        break;
-
-    case 8: 
-        printf("");
-        break;
-
-    case 9: 
-        printf("");
-        break;
-
+    case 5:
+    case 7:
+    case 8:  
     case 10: 
-        printf("");
+        printf("Tem 31 dias. ");
         break;
 
+    case 4:
+    case 6: 
+    case 9: 
     case 11: 
-        printf("");
-        break;
-
     case 12: 
-        printf("");
-        break;
+        printf("Tem 30 dias. ");
     
     default:
         printf("O mes %d nao se encaixa em nenhum trimestre do ano. ", mes);
