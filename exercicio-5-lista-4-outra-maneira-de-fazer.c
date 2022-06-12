@@ -68,8 +68,7 @@ void definicaoPagamento(char opcaoPagamento, float valorTotalCompra)
 int main ()
 {
 	char opcaoPagamento;
-	int qtdParcelas;
-	float valorTotalCompra, valorFinalCompra, valorParcelas, desconto, juros, diferenca; 
+	float valorTotalCompra; 
 	printf("Digite o valor total da compra: \n");
 	scanf("%f", &valorTotalCompra);
 	printf("Para pagamento a vista: [A] \nPara pagamento com cheque pre-datado: [B] \nPara pagamento parcelado em 3 vezes: [C] \nPara pagamento parcelado em 6 vezes: [D] \nPara pagamento parcelado em 12 vezes: [E] \n");
