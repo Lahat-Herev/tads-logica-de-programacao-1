@@ -1,37 +1,62 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int calculoPagamento(float desconto, float valorTotalCompra, int qtdParcelas) 
+void calculoPagamento(float juros, float desconto, float valorTotalCompra, int qtdParcelas) 
 {
-	float valorFinalCompra, juros, diferenca, valorParcelas;
-	valorFinalCompra = valorTotalCompra - (valorTotalCompra * desconto);
-	diferenca = valorTotalCompra - valorFinalCompra;
+	float valorFinalCompra, diferenca, valorParcelas;
+	if (juros > 0)
+	{
+		valorFinalCompra = valorTotalCompra + (valorTotalCompra * juros);
+		diferenca = valorFinalCompra - valorTotalCompra;
+	}
+	if (juros == 0)
+	{
+		valorFinalCompra = valorTotalCompra - (valorTotalCompra * desconto);
+		diferenca = valorTotalCompra  - valorFinalCompra;
+	}
 	valorParcelas = valorFinalCompra / qtdParcelas;
+    desconto *= 100;
+	juros *= 100;
+	if (qtdParcelas == 0)
+	{
+		return printf("O valor final da compra foi de R$%.2f. \nA diferenca foi de R$%.2f e o desconto foi de [%.2f%]", valorFinalCompra, diferenca, desconto);	
+	}
+	if (qtdParcelas > 0)
+	{
+		if (juros == 0)
+		{
+			return printf("O valor total da compra foi de R$%.2f. \nA diferenca foi de R$%.2f \nO desconto foi de [%.2f%]. \nE dividiu-se em %d parcelas no valor de [R$%.2f%]", valorFinalCompra, diferenca, desconto, qtdParcelas, valorParcelas);	
+		}
+		
+		if (juros > 0)
+		{
+			return printf("O valor total da compra foi de R$%.2f \nO valor final da compra foi de R$%.2f \nTeve %d parcelas \nO valor de cada parcela foi de R$%.2f \nTeve juros de [%.2f%] e a diferenca foi de R$%.2f", valorTotalCompra, valorFinalCompra, qtdParcelas, valorParcelas, juros, diferenca);
+		} 
+	}
 }
 
-int definicaoPagamento(char opcaoPagamento, float valorTotalCompra)
+void definicaoPagamento(char opcaoPagamento, float valorTotalCompra)
 {
 	switch (opcaoPagamento)
 	{
 		case 'A': 
-			calculoPagamento(0.15, valorTotalCompra, 0);
-			printf("O valor total da compra foi de R$%.2f \nO valor final da compra foi de R$%.2f \nA diferenca foi de R$%.2f reais e houve o desconto de [15%]. ");
+			calculoPagamento(0, 0.15, valorTotalCompra, 0);
 			break;
 			
 		case 'B': 
-			printf("O valor total da compra foi de R$%.2f \nO valor final da compra foi de R$%.2f \nA diferenca foi de R$%.2f reais e houve o desconto de [10%]. ");
+			calculoPagamento(0, 0.10, valorTotalCompra, 0);
 			break;
 			
 		case 'C': 
-			printf("O valor total da compra foi de R$%.2f \nO valor final da compra foi de R$%.2f \nA diferença foi de R$%.2f reais e houve o desconto de [5%]. \n Teve %d parcelas \n e o valor de cada parcela foi de R$%.2f");
+			calculoPagamento(0, 0.05, valorTotalCompra, 3);
 			break;
 
 		case 'D':
-			printf("O valor total da compra foi de R$%.2f \n O valor final da compra foi de R$%.2f \n Teve %d parcelas \n e o valor de cada parcela foi de %f reais");
+			calculoPagamento(0, 0, valorTotalCompra, 6);
 			break; 
 
 		case 'E':
-			printf("O valor total da compra foi de R$%.2f \n O valor final da compra foi de R$%.2f \n Teve %d parcelas \n O valor de cada parcela foi de R$%.2f \n Teve juros de [8%] e a diferenca foi de R$%.2f");
+			calculoPagamento(0.08, 0, valorTotalCompra, 12);
 			break;
 			
 		default: 
@@ -54,5 +79,5 @@ int main ()
 	printf("Para pagamento parcelado em 12 vezes: [E] \n");
 	scanf(" %c", &opcaoPagamento);
 	opcaoPagamento = toupper(opcaoPagamento);
-	definicaoPagamento(opcaoPagamento);
+	definicaoPagamento(opcaoPagamento, valorTotalCompra);
 }
