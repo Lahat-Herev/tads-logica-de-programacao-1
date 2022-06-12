@@ -75,4 +75,6 @@ int main ()
 	scanf(" %c", &opcaoPagamento);
 	opcaoPagamento = toupper(opcaoPagamento);
 	definicaoPagamento(opcaoPagamento, valorTotalCompra);
+
+	return 0;
 }
