@@ -72,11 +72,7 @@ int main ()
 	float valorTotalCompra, valorFinalCompra, valorParcelas, desconto, juros, diferenca; 
 	printf("Digite o valor total da compra: \n");
 	scanf("%f", &valorTotalCompra);
-	printf("Para pagamento a vista: [A] \n");
-	printf("Para pagamento com cheque pre-datado: [B] \n");
-	printf("Para pagamento parcelado em 3 vezes: [C] \n");
-	printf("Para pagamento parcelado em 6 vezes: [D] \n");
-	printf("Para pagamento parcelado em 12 vezes: [E] \n");
+	printf("Para pagamento a vista: [A] \nPara pagamento com cheque pre-datado: [B] \nPara pagamento parcelado em 3 vezes: [C] \nPara pagamento parcelado em 6 vezes: [D] \nPara pagamento parcelado em 12 vezes: [E] \n");
 	scanf(" %c", &opcaoPagamento);
 	opcaoPagamento = toupper(opcaoPagamento);
 	definicaoPagamento(opcaoPagamento, valorTotalCompra);
