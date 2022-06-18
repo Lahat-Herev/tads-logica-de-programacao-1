@@ -5,7 +5,7 @@
 
 int main(){
     int contador = 0;
-    int numeroMaximoPessoas = 3;
+    int numeroMaximoPessoas = 10;
     int idade;
     int maiorIdade = 0; 
     int menorIdade = idade; 
