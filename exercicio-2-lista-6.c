@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main ()
 {
-    int contador = 1, quantidadeNumeros = 15, armazenarValorAntigoNumero = 1, numero = 1, sequenciaFibonacci; 
+    int contador = 1, quantidadeNumeros = 5, armazenarValorAntigoNumero = 1, numero = 1, sequenciaFibonacci; 
     do
     {
         sequenciaFibonacci = armazenarValorAntigoNumero + numero;
