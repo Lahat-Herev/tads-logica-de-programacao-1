@@ -38,7 +38,7 @@ int main ()
         case 'm':
             homemMaisGordo = (peso < homemMaisGordo ? homemMaisGordo : peso);
             homemMaisVelho = (idade < homemMaisVelho ? homemMaisVelho : idade);
-            if (peso > homemMaisMagro)
+            if (peso < homemMaisMagro)
                 homemMaisMagro = peso;
             break;
         
