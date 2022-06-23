@@ -1,13 +1,18 @@
 #include <stdio.h>
 int main ()
 {
-    int contador = 1, quantidadeNumeros = 5, armazenarValorAntigoNumero = 1, numero = 1, sequenciaFibonacci; 
+    int quantidadeNumeros = 13;
+    int contador = 1;
+    int armazenarValorAntigoNumero = 1;
+    int numero = 1;
+    int sequenciaFibonacci; 
+    printf("%d %d ", armazenarValorAntigoNumero, numero);
     do
     {
         sequenciaFibonacci = armazenarValorAntigoNumero + numero;
-        printf("%d %d %d \n", armazenarValorAntigoNumero, numero, sequenciaFibonacci);
-        armazenarValorAntigoNumero = numero + sequenciaFibonacci;
-        numero = armazenarValorAntigoNumero + sequenciaFibonacci;
+        printf("%d ", sequenciaFibonacci);
+	    numero = armazenarValorAntigoNumero;
+        armazenarValorAntigoNumero = sequenciaFibonacci;
         contador++;
     } while (contador <= quantidadeNumeros);
     
