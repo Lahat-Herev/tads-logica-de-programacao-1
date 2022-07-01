@@ -2,14 +2,15 @@
 
 int main()
 {
+    int primeiraEntrada = 0;
+    int quantidadeValoresReais = 3;
+    int quantidadeValoresMaioresQueDeterminadoValor = 0;
+    double media;
+    double numero;
+    double somaValoresMaioresQueDeterminadoValor = 0; 
     double valorMaximo = 0.;
     double valorMinimo = 0.;
-    int quantidadeValoresMaioresQueDeterminadoValor = 0;
-    double numero;
-    int quantidadeValoresReais = 3;
-    int primeiraEntrada = 0;
     double valorEstabelecido = 5.9;
-    double somaValoresMaioresQueDeterminadoValor; 
 
     for (int contador = 1; contador <= quantidadeValoresReais; contador++)
     {
@@ -33,6 +34,10 @@ int main()
             somaValoresMaioresQueDeterminadoValor += numero;
         }
     }
-    printf("\nA media de valores maiores que %.2f e: %.2f", valorEstabelecido, somaValoresMaioresQueDeterminadoValor / quantidadeValoresMaioresQueDeterminadoValor);
+    media = somaValoresMaioresQueDeterminadoValor / quantidadeValoresMaioresQueDeterminadoValor;
+    if (media > 0.0) 
+        printf("\nA media de valores maiores que %.2f e: %.2f", valorEstabelecido, media);
+    if (media <= 0.0)
+        printf("Nao foi digitado numero maior do que 5.9");
     printf("\nO valor maximo real e: %.2f\nO valor minimo real e: %.2f", valorMaximo, valorMinimo);
 }
